@@ -1,4 +1,12 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateTodoDto } from './create-todo.dto';
+import { IsEnum, IsString, IsOptional } from 'class-validator';
+import { TodoStatus } from '../utils/types';
 
-export class UpdateTodoDto extends PartialType(CreateTodoDto) {}
+export class UpdateTodoDto {
+  @IsOptional()
+  @IsString()
+  title: string;
+
+  @IsOptional()
+  @IsEnum(TodoStatus)
+  status: TodoStatus;
+}

@@ -1,4 +1,7 @@
-import { PickType } from '@nestjs/mapped-types';
-import { TodoDto } from './todo.dto';
+import { IsNotEmpty, IsString } from 'class-validator';
 
-export class CreateTodoDto extends PickType(TodoDto, ['title']) {}
+export class CreateTodoDto {
+  @IsNotEmpty()
+  @IsString()
+  title: string;
+}
