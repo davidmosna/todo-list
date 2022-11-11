@@ -5,6 +5,7 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "repository": "https://github.com/davidmosna/todo-list",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
